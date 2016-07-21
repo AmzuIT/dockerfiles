@@ -23,9 +23,13 @@ RUN cd /tmp && \
     # Download run file
     axel $CUDA_RUNFILE_URL && \
     # Make the run file executable and extract
-    chmod +x cuda_*_linux.run && ./cuda_*_linux.run -extract=`pwd` && \
-    # Install toolkit (silent)
-    ./cuda-linux64-rel-*.run -noprompt && \
+    chmod +x cuda_*_linux.run && ./cuda_*_linux.run -extract=`pwd`
+
+# Install toolkit (silent)
+RUN cd /tmp && \
+     ./cuda-linux64-rel-*.run -noprompt
+
+RUN cd /tmp && \
     # Clean up
     rm -rf *
 
