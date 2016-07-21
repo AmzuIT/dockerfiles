@@ -27,7 +27,8 @@ RUN cd /tmp && \
 
 # Install toolkit (silent)
 RUN cd /tmp && \
-     ./cuda-linux64-rel-*.run -noprompt
+    chmod +x cuda-linux64-rel-*.run && \
+    ./cuda-linux64-rel-*.run -noprompt
 
 RUN cd /tmp && \
     # Clean up
