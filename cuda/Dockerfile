@@ -22,15 +22,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN cd /tmp && \
     # Download run file
     axel $CUDA_RUNFILE_URL && \
-    # Make the run file executable and extract
-    chmod +x cuda_*_linux.run && ./cuda_*_linux.run -extract=`pwd`
-
-# Install toolkit (silent)
-RUN cd /tmp && \
-    chmod +x cuda-linux64-rel-*.run && \
-    ./cuda-linux64-rel-*.run -noprompt
-
-RUN cd /tmp && \
+    chmod +x cuda_*_linux.run && \
+    # Install toolkit (silent)
+    ./cuda_*_linux.run --silent --toolkit && \
     # Clean up
     rm -rf *
 
