@@ -24,13 +24,13 @@ RUN cd /tmp && \
     axel $CUDA_RUNFILE_URL && \
     chmod +x cuda_*_linux.run && \
     # Install toolkit (silent)
-    ./cuda_*_linux.run --silent --toolkit && \
+    ./cuda_*_linux.run --silent --toolkit
     # Clean up
-    rm -rf *
+    # rm -rf *
 
 # Install nvidia drivers (silent, no kernel)
-RUN cd /tmp && \
-    axel http://us.download.nvidia.com/XFree86/Linux-x86_64/352.93/NVIDIA-Linux-x86_64-352.93.run  && \
-    chmod +x  ./NVIDIA-Linux-x86_64-*.run && \
-    ./NVIDIA-Linux-x86_64-*.run -s --no-kernel-module && \
-    rm -rf *
+# RUN cd /tmp && \
+#     axel http://us.download.nvidia.com/XFree86/Linux-x86_64/352.93/NVIDIA-Linux-x86_64-352.93.run  && \
+#     chmod +x  ./NVIDIA-Linux-x86_64-*.run && \
+#     ./NVIDIA-Linux-x86_64-*.run -s --no-kernel-module && \
+#     rm -rf *
