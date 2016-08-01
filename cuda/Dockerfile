@@ -33,6 +33,6 @@ RUN cd /tmp && \
     # Install toolkit (silent)
     ./cuda_*_linux.run --silent --toolkit
     # Clean up
-    # rm -rf *
+    rm -rf *
 
 
