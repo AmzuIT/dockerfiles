@@ -31,7 +31,7 @@ RUN cd /tmp && \
     axel $CUDA_RUNFILE_URL && \
     chmod +x cuda_*_linux.run && \
     # Install toolkit (silent)
-    ./cuda_*_linux.run --silent --toolkit
+    ./cuda_*_linux.run --silent --toolkit && \
     # Clean up
     rm -rf *
 
