@@ -45,6 +45,7 @@ RUN cd /tmp && \
   chmod +x cuda_*_linux.run && ./cuda_*_linux.run -extract=`pwd` && \
 # Install CUDA drivers (silent, no kernel)
   ./NVIDIA-Linux-x86_64-*.run -s --no-kernel-module && \
-# Install toolkit (silent)  
-  ./cuda-linux64-rel-*.run -noprompt
-  
+# Install toolkit (silent)
+  ./cuda-linux64-rel-*.run -noprompt | cat > /dev/null && \
+# Clean up
+  rm -rf *
